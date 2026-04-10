@@ -464,6 +464,94 @@
         }
         .toast-item strong { display: block; margin-bottom: 4px; }
 
+        /* About */
+        .about-section {
+            position: relative;
+            background:
+                radial-gradient(900px 420px at 10% 10%, rgba(255,106,0,0.10), transparent 60%),
+                radial-gradient(800px 420px at 95% 10%, rgba(64,120,255,0.08), transparent 60%),
+                var(--bg-subtle);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.72);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            color: rgba(11,16,32,0.78);
+            font-weight: 650;
+            font-size: 0.88rem;
+        }
+        .about-lede { margin-top: 12px; font-size: 1.05rem; color: rgba(11,16,32,0.76); max-width: 68ch; }
+        .about-mission {
+            margin-top: 16px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.2rem 1.25rem;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--brand);
+        }
+        .about-mission strong { color: var(--ink); }
+        .about-mission p { color: rgba(11,16,32,0.74); margin-top: 6px; }
+        .about-card {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.6rem;
+            box-shadow: var(--shadow-md);
+        }
+        .about-card h3 { margin-bottom: 8px; }
+        .about-card p { color: rgba(11,16,32,0.70); }
+        .chip-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        @media (max-width: 560px) { .chip-grid { grid-template-columns: 1fr; } }
+        .chip {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 10px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(11,16,32,0.10);
+            background: rgba(255,255,255,0.70);
+            transition: var(--transition);
+        }
+        .chip:hover { transform: translateY(-2px); border-color: rgba(255,106,0,0.22); }
+        .chip i { color: var(--brand); margin-top: 3px; }
+        .chip strong { display: block; color: var(--ink); }
+        .chip span { display: block; color: rgba(11,16,32,0.66); font-size: 0.92rem; margin-top: 2px; }
+        .checklist {
+            margin-top: 16px;
+            display: grid;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+        .checklist li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: rgba(11,16,32,0.76);
+        }
+        .checklist i { color: var(--brand); margin-top: 3px; }
+
         @media (prefers-reduced-motion: reduce) {
             * { scroll-behavior: auto !important; }
             .trusted-track { animation: none !important; }
@@ -536,6 +624,7 @@
 
             <a href="#" class="demo-link">Resources</a>
             <a href="#" class="demo-link">Company</a>
+            <a href="#about">About</a>
             <a href="#pricing">Pricing</a>
             <a href="#" class="btn btn-primary demo-link" style="padding:0.7rem 1.1rem;">Start Free Trial</a>
         </nav>
@@ -577,6 +666,75 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" loading="lazy" decoding="async">
         </div>
     </div>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="reveal">
+                    <span class="kicker"><i class="fas fa-location-dot" aria-hidden="true"></i> Morocco-based · SME &amp; NGO focused</span>
+                    <h2 style="margin-top: 12px;">Security you can trust. Transformation you can measure.</h2>
+                    <p class="about-lede">
+                        Nexor.ma helps Moroccan organizations protect email, websites, and everyday operations—without enterprise complexity.
+                        We translate security into clear priorities, quick wins, and long-term resilience.
+                    </p>
+
+                    <div class="about-mission">
+                        <strong>Mission</strong>
+                        <p>Make cybersecurity and digital transformation accessible for every Moroccan SME and NGO through practical, transparent support.</p>
+                    </div>
+
+                    <ul class="checklist">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span><strong>Business-first approach</strong> — we start from your workflows, not from tools.</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span><strong>Clear deliverables</strong> — simple reports, prioritized actions, and next steps.</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span><strong>Support that fits your team</strong> — ideal for small IT teams or no IT team.</span></li>
+                    </ul>
+                </div>
+
+                <div class="reveal">
+                    <div class="about-card">
+                        <h3>What Nexor.ma delivers</h3>
+                        <p>Practical protection and guidance for real-world risks faced by Moroccan SMEs and NGOs.</p>
+
+                        <div class="chip-grid" role="list" aria-label="Core services">
+                            <div class="chip" role="listitem">
+                                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Cybersecurity consulting</strong>
+                                    <span>Security roadmap, policies, and improvements you can implement.</span>
+                                </div>
+                            </div>
+                            <div class="chip" role="listitem">
+                                <i class="fas fa-clipboard-check" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Risk assessments &amp; audits</strong>
+                                    <span>Clear findings, risk scoring, and a prioritized action plan.</span>
+                                </div>
+                            </div>
+                            <div class="chip" role="listitem">
+                                <i class="fas fa-diagram-project" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Digital transformation</strong>
+                                    <span>Secure adoption of tools, workflows, and better operational systems.</span>
+                                </div>
+                            </div>
+                            <div class="chip" role="listitem">
+                                <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Email &amp; website protection</strong>
+                                    <span>Reduce phishing, secure accounts, and harden your online presence.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-group" style="margin-top: 16px;">
+                            <a href="#contact" class="btn btn-primary audit-btn" data-intent="sales">Get a consultation <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a href="#contact" class="btn btn-outline demo-btn" data-intent="audit">Request an audit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section><div class="container"><h2 class="reveal">Cyber threats are growing faster than companies can react.</h2><div class="grid-2"><div class="problem-card stagger-item"><i class="fas fa-chart-line"></i><div><h4>Lack real-time visibility</h4><p>Without live monitoring, threats go unnoticed.</p></div></div><div class="problem-card stagger-item"><i class="fas fa-puzzle-piece"></i><div><h4>Fragmented tools</h4><p>Multiple dashboards create blind spots.</p></div></div><div class="problem-card stagger-item"><i class="fas fa-building"></i><div><h4>No security teams</h4><p>Small companies cannot afford large teams.</p></div></div><div class="problem-card stagger-item"><i class="fas fa-bug"></i><div><h4>Financial loss</h4><p>Breaches impact trust and revenue.</p></div></div></div></div></section>
 
@@ -1001,8 +1159,26 @@
 </footer>
 
 <script>
+    // Lightweight helpers + small polyfills (improves compatibility in older browsers)
+    (function () {
+        if (!Element.prototype.matches) {
+            Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+        }
+        if (!Element.prototype.closest) {
+            Element.prototype.closest = function (s) {
+                let el = this;
+                while (el && el.nodeType === 1) {
+                    if (el.matches(s)) return el;
+                    el = el.parentElement || el.parentNode;
+                }
+                return null;
+            };
+        }
+    })();
+
     const $ = (sel, root = document) => root.querySelector(sel);
-    const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+    const $$ = (sel, root = document) => [].slice.call(root.querySelectorAll(sel));
+    const on = (el, evt, handler, opts) => { if (el) el.addEventListener(evt, handler, opts); };
 
     // Smooth scroll for in-page anchors (better UX than default jump)
     $$('a[href^="#"]').forEach(a => {
@@ -1194,8 +1370,8 @@
         testimonialIndex = (idx + total) % total;
         testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
     };
-    $('#prevTestimonial')?.addEventListener('click', () => moveTestimonial(testimonialIndex - 1));
-    $('#nextTestimonial')?.addEventListener('click', () => moveTestimonial(testimonialIndex + 1));
+    on($('#prevTestimonial'), 'click', () => moveTestimonial(testimonialIndex - 1));
+    on($('#nextTestimonial'), 'click', () => moveTestimonial(testimonialIndex + 1));
 
     // FAQ (button-based + aria)
     $$('.faq-item').forEach(item => {
@@ -1268,7 +1444,7 @@
         if (demoModalCopy) demoModalCopy.textContent = copyByIntent[intent] || copyByIntent.demo;
         demoModal.setAttribute('data-open', 'true');
         demoModal.setAttribute('aria-hidden', 'false');
-        demoModalClose?.focus();
+        if (demoModalClose) demoModalClose.focus();
     };
     const closeModal = () => {
         if (!demoModal) return;
@@ -1276,12 +1452,12 @@
         demoModal.setAttribute('aria-hidden', 'true');
         if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
     };
-    demoModalClose?.addEventListener('click', closeModal);
-    demoModal?.addEventListener('click', (e) => {
+    on(demoModalClose, 'click', closeModal);
+    on(demoModal, 'click', (e) => {
         if (e.target === demoModal) closeModal();
     });
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && demoModal?.getAttribute('data-open') === 'true') closeModal();
+        if (e.key === 'Escape' && demoModal && demoModal.getAttribute('data-open') === 'true') closeModal();
     });
     // Very small focus trap (keeps keyboard inside dialog)
     document.addEventListener('keydown', (e) => {
@@ -1308,7 +1484,7 @@
     });
 
     // Modal "copy email"
-    $('#demoModalToast')?.addEventListener('click', async () => {
+    on($('#demoModalToast'), 'click', async () => {
         const email = 'hello@nexor.com';
         try {
             await navigator.clipboard.writeText(email);
@@ -1321,11 +1497,14 @@
     // Contact form (basic client validation + a11y status)
     const contactForm = $('#contactForm');
     const formStatus = $('#formStatus');
-    contactForm?.addEventListener('submit', (e) => {
+    on(contactForm, 'submit', (e) => {
         e.preventDefault();
-        const name = $('#name')?.value?.trim();
-        const email = $('#email')?.value?.trim();
-        const message = $('#message')?.value?.trim();
+        const nameEl = $('#name');
+        const emailEl = $('#email');
+        const messageEl = $('#message');
+        const name = nameEl ? String(nameEl.value || '').trim() : '';
+        const email = emailEl ? String(emailEl.value || '').trim() : '';
+        const message = messageEl ? String(messageEl.value || '').trim() : '';
 
         if (!name || !email || !message) {
             pushToast({ title: 'Missing fields', message: 'Please fill in your name, email, and message.' });
